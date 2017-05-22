@@ -1,10 +1,10 @@
 package pl.altkom.shop.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.inject.Inject;
 
 import pl.altkom.shop.repo.ProductRepo;
 
 public class ProductService {
-	@Autowired
+	@Inject
 	private ProductRepo repo;
 }
