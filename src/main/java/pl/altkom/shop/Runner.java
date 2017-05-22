@@ -10,6 +10,8 @@ public class Runner {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(CoreConfig.class);
 		ProductService productService = (ProductService) context.getBean("productService");
 		System.out.println(productService);
+
+		ProductService productService2 = new ProductService();
 	}
 
 }
