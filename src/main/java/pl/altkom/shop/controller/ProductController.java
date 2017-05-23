@@ -34,6 +34,8 @@ public class ProductController {
 		model.addAttribute("orderBy ", orderBy);
 
 		List<Product> products = repo.getAll();
+		// products.stream().filter(p ->
+		// p.getName().toLowerCase().contains(query)).collect(Collectors.toList());
 		model.addAttribute("products", products);
 
 		return "product/product-list";

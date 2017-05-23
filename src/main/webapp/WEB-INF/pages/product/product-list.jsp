@@ -13,24 +13,26 @@
 		class=" glyphicon glyphicon-plus"></i> Add new product
 	</a>
 	<div class="col-xs-4 pull-right">
+		<form method="get">
 		<div class="input-group">
-			<input type="text" class="form-control searcher"
-				placeholder="Search..."> <span class="input-group-btn">
+			<input type="text" name="query" class="form-control searcher"
+				placeholder="Search..." value="${param.query}"> <span class="input-group-btn">
 				<button class="btn btn-default" type="button">
 					<i class="glyphicon glyphicon-send" style="height:20px"></i>
 				</button>
 			</span>
 		</div>
+		</form>
 	</div>
 
 <table class="table table-hover table-striped">
 		<thead>
 			<tr>
 				<th>Id</th>
-				<th>Name</th>
-				<th>Quantity</th>
-				<th>Price</th>
-				<th>Actions</th>
+				<th><spring:message code="product.name"/></th>
+				<th><spring:message code="product.quantity"/></th>
+				<th><spring:message code="product.price"/></th>
+				<th><spring:message code="product.actions"/></th>
 			</tr>
 		</thead>
 		<tbody>
