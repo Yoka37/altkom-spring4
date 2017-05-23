@@ -12,6 +12,9 @@
 	<a href="new" class="btn btn-primary "> <i
 		class=" glyphicon glyphicon-plus"></i> Add new product
 	</a>
+	
+	
+	
 	<div class="col-xs-4 pull-right">
 		<div class="input-group">
 			<input type="text" class="form-control searcher"
@@ -42,6 +45,9 @@
 					<td>${p.price}</td>
 					<td>
 						<a href="${p.id}/delete"> <i class=" glyphicon glyphicon-remove-circle"></i></a>
+					<a href="${p.id}/edit" > <i
+		class="glyphicon  glyphicon-pencil"></i> Edytuj product
+	</a>
 					</td>
 				</tr>
 			</c:forEach>
