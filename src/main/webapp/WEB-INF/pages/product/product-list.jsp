@@ -8,18 +8,38 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ include file="/WEB-INF/pages/layout/head.jsp"%>
 
-<table>
-	<thead>
-	<tbody>
-	
-		<tr spring:>
-		
-		</tr>
-	</tbody>
-	</thead>
-</table>
+
 <div class="jumbotron">
-  <h1>Hello, world!</h1>
+ 
+ 	<ul>
+ 		<li>page=${page}</li>
+ 		<li>orderBy=${orderBy}</li>
+ 		<li>size=${param.size}</li>
+ 		 
+ 	</ul>
+ 	
+ 	<table class="table">
+ 		<thead>
+ 			<tr>
+ 				<th>Name</th>
+ 				<th>Price</th>
+ 				<th>Id</th>
+ 				<th>Actions</th>
+ 			</tr>
+ 		</thead>
+ 		<tbody>
+ 			<c:forEach var="p" items ="${products}">
+ 			<tr>
+ 				<td>${p.name }</td>
+ 				<td>${p.price }</td>
+ 				<td>${p.id}</td>
+ 				<td>${p.quantity }</td>
+ 			</tr>
+ 			</c:forEach>
+ 		</tbody>
+ 	
+ 	</table>
+ 	
 </div>
 
 <%@ include file="/WEB-INF/pages/layout/footer.jsp"%>
