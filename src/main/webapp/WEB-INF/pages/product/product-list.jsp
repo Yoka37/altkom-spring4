@@ -15,7 +15,11 @@
 		<li>size = ${param.size}</li>
 	</ul>
 </div>
+<c:if test="${param.success }">
+<h1>Udało się usunąć</h1>
+${param.ex}
 
+</c:if>
 <table class="table table-hover table-striped">
 		<thead>
 			<tr>
@@ -33,7 +37,9 @@
 					<td>${p.name}</td>
 					<td>${p.quantity}</td>
 					<td>${p.price}</td>
-					<td></td>
+					<td>
+						<a href="${p.id}/delete"> <i class="glyphicon glyphicon-remove-circle"></i></a>
+					</td>
 				</tr>
 			</c:forEach>
 		</tbody>
