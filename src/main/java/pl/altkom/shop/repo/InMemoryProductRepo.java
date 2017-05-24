@@ -10,6 +10,7 @@ import javax.annotation.PostConstruct;
 
 import org.apache.log4j.Logger;
 
+import pl.altkom.shop.aop.Monitoring;
 import pl.altkom.shop.model.Product;
 
 //@Repository
@@ -28,6 +29,7 @@ public class InMemoryProductRepo implements ProductRepo {
 		log.info("#####################################");
 	}
 
+	@Monitoring(maxTime = 20)
 	@Override
 	public Long insert(Product product) {
 		product.setId(products.size() + 1L);

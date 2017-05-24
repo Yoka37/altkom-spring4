@@ -18,10 +18,13 @@ public class MonitroingAspect {
 	public Object monitpr(ProceedingJoinPoint pjp) throws Throwable {
 		MethodSignature ms = (MethodSignature) pjp.getSignature();
 		Method m = ms.getMethod();
+		long max = m.getAnnotation(Monitoring.class).maxTime();
 		long currentTimeMillis = System.currentTimeMillis();
 		Object obj = pjp.proceed();
 		long end = System.currentTimeMillis() - currentTimeMillis;
-		log.info(m + " took: " + end);
+
+		log.info(m + " took: " + end + max);
+
 		return obj;
 	}
 

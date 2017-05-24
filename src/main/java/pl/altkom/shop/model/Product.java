@@ -20,6 +20,16 @@ public class Product {
 	private String description;
 	@NotNull
 	private Integer quantity;
+	private Integer number;
+
+	public Integer getNumber() {
+		return number;
+	}
+
+	public void setNumber(Integer number) {
+		this.number = number;
+	}
+
 	@NotNull
 	private BigDecimal price;
 

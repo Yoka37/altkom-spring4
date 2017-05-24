@@ -9,6 +9,7 @@ import javax.persistence.PersistenceUnit;
 
 import org.springframework.stereotype.Repository;
 
+import pl.altkom.shop.aop.Monitoring;
 import pl.altkom.shop.model.Product;
 
 @Repository
@@ -28,6 +29,7 @@ public class HibernateProductRepo implements ProductRepo {
 		transaction.commit();
 	}
 
+	@Monitoring(maxTime = 10)
 	@Override
 	public Long insert(Product product) {
 		EntityManager em = startTx();
@@ -57,6 +59,7 @@ public class HibernateProductRepo implements ProductRepo {
 		return product;
 	}
 
+	@Monitoring(maxTime = 10)
 	@Override
 	public void update(Product product) {
 		EntityManager em = startTx();
@@ -64,6 +67,7 @@ public class HibernateProductRepo implements ProductRepo {
 		commit(em);
 	}
 
+	@Monitoring(maxTime = 10)
 	@Override
 	public List<Product> getAll() {
 		EntityManager em = startTx();
