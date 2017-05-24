@@ -8,5 +8,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface Monitoring {
-	long maxTime() default 10L;
+	long maxTime() default 1L;
 }
