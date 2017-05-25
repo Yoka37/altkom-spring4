@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -48,7 +50,12 @@ public class HibernateProductRepo implements ProductRepo {
 
 	@Override
 	@Transactional(readOnly = true)
-	public List<Product> getAll() {
-		return em.createQuery("FROM Product p").getResultList();
+	public List<Product> getAll(@NotNull String name) {
+		// Preconditions.checkNotNull(name, "query is null");
+		Query query = em.createQuery("From Product p WHERE p.name LIKE :name");
+		query.setParameter("name", name + "%");
+		// return em.createQuery("FROM Product p").getResultList();
+		List resultlist = query.getResultList();
+		return resultlist;
 	}
 }

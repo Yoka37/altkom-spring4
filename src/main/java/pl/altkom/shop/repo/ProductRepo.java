@@ -18,4 +18,6 @@ public interface ProductRepo {
 
 	@Monitoring
 	public List<Product> getAll();
+
+	List<Product> getAll(String name);
 }
