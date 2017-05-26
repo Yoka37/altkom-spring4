@@ -23,4 +23,13 @@ public class SaleDocumentRESTWebService {
 		return saleDocument;
 	}
 
+	@GET
+	@Path("/")
+	@Produces(MediaType.APPLICATION_JSON)
+	public SaleDocument save(SaleDocument doc) {
+
+		doc.setNumber("REST ");
+		return doc;
+	}
+
 }
